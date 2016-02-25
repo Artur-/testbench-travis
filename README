@@ -1,5 +1,24 @@
 Example on how you can run TestBench tests using Travis.
 
-Setup: 
-1. Go to Travis and add a secure environment variable TESTBENCH_LICENSE
-containing your TestBench license
+To setup your own project:
+1. Fork this project
+2. Open http://travis-ci.org and sign in using your GitHub account
+3. Open your profile page
+4. If you don't see any repositories, wait a minute or click the "Sync account" button
+and wait for synchronization to complete
+5. Find the repository in the list and enable builds for it
+6. Click the settings icon (cogwheel) beside the switch
+7. Add an secure environment variable TESTBENCH_LICENSE containing your TestBench license
+
+Testing the setup
+1. Create a commit in a new branch
+2. Create a pull request for the branch
+
+Travis should automatically build your project and run the TestBench tests
+on PhantomJS. If you modify (break) BasicIT in your commit, Travis should
+fail your pull request.
+
+If you want to prevent broken pull requests from being merged, go to the
+repository settings -> branches, make master a protected branch and select
+"Require status checks to pass before merging" and
+"continuous-integration/travis-ci".
